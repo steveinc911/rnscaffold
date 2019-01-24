@@ -1,4 +1,5 @@
 import { takeLatest } from 'redux-saga/effects'
+import { all }     from 'redux-saga/effects'
 import AccountAPI from '../api/security'
 
 import {
@@ -7,11 +8,11 @@ import {
 } from '../actions'
 
 import {
-    login
-} from '../actions/security'
+    loginSaga
+} from './security'
 
 export default function* () {
-    yield [
-        takeLatest(LOGIN[ REQUEST ], login, AccountAPI),
-    ]
+    yield all([
+        takeLatest(LOGIN[ REQUEST ], loginSaga, AccountAPI),
+    ])
 }

@@ -8,8 +8,8 @@ export function* loginSaga(api, action) {
     try {
         const response = yield call(api.authenticate)
         console.log("response", response)
-        if (response.ok) {          
-            yield put(login.success())
+        if (response.success) {          
+            yield put(login.success(response))
         } else {
             yield put(login.failure('Connection problems :('))
         }

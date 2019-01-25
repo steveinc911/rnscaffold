@@ -2,27 +2,32 @@ import React from 'react';
 import {
   StyleSheet,
   Text,
-  Button,
   View,
+  Button,
   AsyncStorage,
 } from 'react-native';
 
-export default  class SignInScreen extends React.Component {
+export default  class Browser extends React.Component {
   static navigationOptions = {
-    title: 'Please sign in',
+    title: 'You have signed in',
+  };
+
+  _signOutAsync = async () => {
+    await AsyncStorage.clear();
+    this.props.navigation.navigate('Auth');
   };
 
   render() {
     return (
       <View style={styles.container}>
-        <Button title="Sign in!" onPress={this._signInAsync} />
+        <Text>Yay!</Text>
+        <Button title="Actually, sign me out :)" onPress={this._signOutAsync} />
       </View>
     );
   }
 
   _signInAsync = async () => {
-    await AsyncStorage.setItem('userToken', 'abc');
-    this.props.navigation.navigate('App');
+    
   };
 }
 

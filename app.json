@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "feelgood1",
-    "slug": "feelgood1",
+    "name": "rnscaffold",
+    "slug": "rnscaffold",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [

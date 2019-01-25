@@ -6,7 +6,9 @@ export default (rootReducer, rootSaga) => {
     /* ------------- Redux Configuration ------------- */
 
     const middleware = []
-    const enhancers = []
+    const enhancers = [
+        window.devToolsExtension ? window.devToolsExtension() : f => f // Add support for Redux dev tools
+    ]
 
 
     /* ------------- Saga Middleware ------------- */

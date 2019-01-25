@@ -1,14 +1,10 @@
-export const REQUEST = 'REQUEST'
-export const SUCCESS = 'SUCCESS'
-export const FAILURE = 'FAILURE'
+import { 
+    createRequestTypes
+ } from '../../../actions/constants'
 
-export const SET = 'SET'
-export const UPDATE = 'UPDATE'
 
-function createRequestTypes( base, optional = [] ) {
-  return [ REQUEST, SUCCESS, FAILURE, ...optional ].reduce( ( acc, type ) => (
-    { [type]: `${base}_${type}`, ...acc }
-  ), {} )
-}
+console.log(typeof createRequestTypes)
 
 export const LOGIN = createRequestTypes( 'LOGIN' )
+
+console.log(JSON.stringify(LOGIN))

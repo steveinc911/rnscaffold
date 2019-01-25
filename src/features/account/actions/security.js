@@ -1,9 +1,12 @@
 import {
+    LOGIN,
+} from '.'
+
+import {
     REQUEST,
     SUCCESS,
     FAILURE,
-    LOGIN,
-} from './index'
+} from '../../../actions/constants' 
 
 function createActions( action ) {
     return {

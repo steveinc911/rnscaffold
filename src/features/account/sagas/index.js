@@ -3,9 +3,12 @@ import { all }     from 'redux-saga/effects'
 import AccountAPI from '../api/security'
 
 import {
-    REQUEST,
     LOGIN
 } from '../actions'
+
+import {
+    REQUEST,
+} from '../../../actions/constants'
 
 import {
     loginSaga
